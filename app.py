@@ -27,7 +27,9 @@ from example_routes import apply_example_routes
 apply_example_routes(app)
 
 # == End Example Code ==
-
+@app.route('/goodbye', methods=['GET'])
+def get_goodbye():
+    return render_template('goodbye.html', bye='Bye!')
 # These lines start the server if you run this file directly
 # They also start the server configured to use the test database
 # if started in test mode.
